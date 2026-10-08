@@ -9,10 +9,12 @@ import SustainabilityPage from './SustainabilityPage'
 import FAQPage from './FAQPage'
 import OrderPage from './OrderPage'
 import Footer from './Footer'
+import LoadingScreen from './LoadingScreen'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [assetsLoaded, setAssetsLoaded] = useState(false)
 
   const handleNavigate = (page) => {
     setCurrentPage(page)
@@ -22,6 +24,9 @@ export default function App() {
 
   return (
     <>
+      {/* Real-time 3D Asset Readiness Loading Screen */}
+      <LoadingScreen onLoaded={() => setAssetsLoaded(true)} />
+
       {/* Ambient background glows */}
       <div className="ambient-glow glow-1" />
       <div className="ambient-glow glow-2" />
