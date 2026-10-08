@@ -4,12 +4,12 @@ import { useGLTF, Center, Resize } from '@react-three/drei'
 
 /**
  * DietCoke Component:
- * - Loads /diet_coke.glb with useGLTF
+ * - Loads /diet_coke_v2.glb with useGLTF
  * - Uses Drei <Resize> and <Center> to normalize the raw mesh to a predictable height (2.7 units)
  * - Forces the pivot to the geometric center of mass so rotations spin in-place without sweeping off-screen
  */
 export default function DietCoke(props) {
-  const modelPath = `${import.meta.env.BASE_URL}diet_coke.glb`
+  const modelPath = `${import.meta.env.BASE_URL}diet_coke_v2.glb`
   const { scene } = useGLTF(modelPath)
 
   useLayoutEffect(() => {
@@ -41,5 +41,6 @@ export default function DietCoke(props) {
   )
 }
 
-useGLTF.preload(`${import.meta.env.BASE_URL}diet_coke.glb`)
+useGLTF.preload(`${import.meta.env.BASE_URL}diet_coke_v2.glb`)
+
 
